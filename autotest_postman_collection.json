@@ -1,0 +1,5451 @@
+{
+	"info": {
+		"_postman_id": "ada7ead2-c114-49e2-9a89-3eba8f5ed9f9",
+		"name": "中保",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.登入Login(EqUtils)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "LOGIN",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "pwd",
+							"value": "$2b$10$cwIZ9KhaZ9zPIlUpFb/Hb.DOlg1r/mfhysiO2SuAu3Iarwox0WuhS",
+							"description": "需三步驟\n1.取得金鑰\n2.組成密碼字串( MD5(password) + 金鑰)\n3.bcypt(密碼字串)",
+							"type": "text"
+						},
+						{
+							"key": "host",
+							"value": "10.200.6.26",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "session",
+							"value": "099a9a53-d9bc-11e9-843a-00e009a6d480",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{Domain}}/POSWEB/?action=LOGIN",
+					"protocol": "http",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "LOGIN"
+						}
+					]
+				},
+				"description": "Login"
+			},
+			"response": []
+		},
+		{
+			"name": "2.申請帳號 SignUp (EqUtils)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SIGNUP",
+							"description": "執行命令",
+							"type": "text"
+						},
+						{
+							"key": "ID",
+							"value": "hong",
+							"description": "帳號",
+							"type": "text"
+						},
+						{
+							"key": "Pwd",
+							"value": "88163c52fdb7520d2da5295dcb52bff0",
+							"description": "密碼，請用 MD5 加密",
+							"type": "text"
+						},
+						{
+							"key": "Name",
+							"value": "Yu-Hong",
+							"description": "姓名",
+							"type": "text"
+						},
+						{
+							"key": "UnitName",
+							"value": "admin",
+							"description": "公司",
+							"type": "text"
+						},
+						{
+							"key": "Position",
+							"value": "Engineer",
+							"description": "職位",
+							"type": "text"
+						},
+						{
+							"key": "Tel",
+							"value": "0926047040",
+							"description": "電話",
+							"type": "text"
+						},
+						{
+							"key": "Email",
+							"value": "lambertchen@dps.tw",
+							"type": "text"
+						},
+						{
+							"key": "County",
+							"value": "台北市",
+							"description": "縣市",
+							"type": "text"
+						},
+						{
+							"key": "Town",
+							"value": "大同區",
+							"description": "鄉鎮地區",
+							"type": "text"
+						},
+						{
+							"key": "Address",
+							"value": "鄭州路139號",
+							"description": "地址",
+							"type": "text"
+						},
+						{
+							"key": "Lat",
+							"value": "25.0119",
+							"description": "緯度",
+							"type": "text"
+						},
+						{
+							"key": "Lng",
+							"value": "121.5179",
+							"description": "經度",
+							"type": "text"
+						},
+						{
+							"key": "UnitType",
+							"value": "5",
+							"description": "單位代碼",
+							"type": "text"
+						},
+						{
+							"key": "UnitType2",
+							"value": "501",
+							"description": "子單位代碼",
+							"type": "text"
+						},
+						{
+							"key": "Role",
+							"value": "normal",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SIGNUP",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SIGNUP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.帳號信箱確認 CheckEmail(EqUtils)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "CHECKEMAIL",
+							"type": "text"
+						},
+						{
+							"key": "Email",
+							"value": "jackal0731@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "API",
+							"description": "非必填, type = API",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=CHECKEMAIL",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "CHECKEMAIL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.取得訂閱站台GetSubscribeSite(GetData)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSUBSCRIBESITELIST",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "hong",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "subSet",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "70c9215e-b35f-48e6-a0db-11d227d7700a",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSUBSCRIBESITELIST",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSUBSCRIBESITELIST"
+						}
+					]
+				},
+				"description": "取得訂閱站台 GetSubscribeSite"
+			},
+			"response": []
+		},
+		{
+			"name": "5.取得地圖警示設定檔GetClientMapSetting(GetData)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETCLIENTMAPSETTING",
+							"description": "取得地圖警示設定檔",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "echo_admin",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "echo_admin",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "4a853883-efc7-48c3-b1ab-62e7f6acef34",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETCLIENTMAPSETTING",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETCLIENTMAPSETTING"
+						}
+					]
+				},
+				"description": "GetClientMapSetting"
+			},
+			"response": []
+		},
+		{
+			"name": "6.更新地圖警示設定檔 UPDATECLIENTSETTING",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "UPDATECLIENTSETTING",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "echo_admin",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "get_alert",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "get_report",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "get_test",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "4a853883-efc7-48c3-b1ab-62e7f6acef34",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=UPDATECLIENTSETTING",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "UPDATECLIENTSETTING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7.取得Client資料 GETCLIENTLIST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETCLIENTLIST",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "28616921-560f-41a3-82be-78a323ecf9d8",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETCLIENTLIST",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETCLIENTLIST"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8.取得API帳號清單 GETAPIACCOUNTLIST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETAPIACCOUNTLIST",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "28616921-560f-41a3-82be-78a323ecf9d8",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETAPIACCOUNTLIST",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETAPIACCOUNTLIST"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9.取得下拉單選項 GETSELECTITEMS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSELECTITEMS",
+							"type": "text"
+						},
+						{
+							"key": "name_class",
+							"value": "groupAuthorize",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "accountGroup",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "functionFirst",
+							"description": "主選單",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "functionSecond",
+							"description": "子選單",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "zero",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "param_code",
+							"value": "63000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "county",
+							"description": "所有縣市",
+							"type": "text"
+						},
+						{
+							"key": "name_class",
+							"value": "town",
+							"description": "所有鄉鎮市區",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "siteType",
+							"description": "所有站別",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "siteAlarmLevel",
+							"description": "震度門檻",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "siteDeviceType",
+							"description": "設備類型",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "siteGroupKey",
+							"description": "案場類別",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "siteGroup2Key",
+							"description": "尚未選擇案場子類別",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "unit",
+							"description": "請選擇單位類型",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "sec_unit",
+							"description": "請選擇單位子類型",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "groupInit",
+							"description": "尚未設定起始頁面",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "userRole",
+							"description": "所有類別",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name_class",
+							"value": "program",
+							"description": "方案",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "28616921-560f-41a3-82be-78a323ecf9d8",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSELECTITEMS",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSELECTITEMS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10.確認客戶ID是否使用 CHECKACCOUNTID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "CHECKACCOUNTID",
+							"type": "text"
+						},
+						{
+							"key": "AccountID",
+							"value": "aaa",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "28616921-560f-41a3-82be-78a323ecf9d8",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=CHECKACCOUNTID",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "CHECKACCOUNTID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11.取得站台資料 GETDATASITEINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETDATASITEINFO",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "S00005",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "4a853883-efc7-48c3-b1ab-62e7f6acef34",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETDATASITEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETDATASITEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12.取得主站site_name GETSITENAMEBYIP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSITENAMEBYIP",
+							"type": "text"
+						},
+						{
+							"key": "site_ip",
+							"value": "220.135.87.247:7016",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "4a853883-efc7-48c3-b1ab-62e7f6acef34",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSITENAMEBYIP",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSITENAMEBYIP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13.取得場址代碼 GETSITEVALUE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSITEVALUE",
+							"type": "text"
+						},
+						{
+							"key": "town_id",
+							"value": "66000270",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "af6c3778-e47d-4d4a-8833-3c60665c03fe",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSITEVALUE",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSITEVALUE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14.取得站台搜尋資料 GETSEARCHSITERESULT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHSITERESULT",
+							"type": "text"
+						},
+						{
+							"key": "site_type",
+							"value": "M",
+							"description": "M 主站  S Client",
+							"type": "text"
+						},
+						{
+							"key": "area_id",
+							"value": "63000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "area_id2",
+							"value": "10002040",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "site_id",
+							"value": "S00110",
+							"type": "text"
+						},
+						{
+							"key": "site_name",
+							"value": "桃源國小",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "4a853883-efc7-48c3-b1ab-62e7f6acef34",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHSITERESULT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHSITERESULT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15.取得縣市的站台搜尋資料 GETSEARCHSITEBYCOUNTYRESULTS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHSITEBYCOUNTYRESULTS",
+							"type": "text"
+						},
+						{
+							"key": "area_id",
+							"value": "65000",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "65b1d789-4c07-4d48-b635-35b14f7a3a34",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHSITEBYCOUNTYRESULTS",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHSITEBYCOUNTYRESULTS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16.變更站台資料[Insert] SetDataSiteInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETDATASITEINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "insert",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "TT115",
+							"type": "text"
+						},
+						{
+							"key": "site_name",
+							"value": "測試111",
+							"type": "text"
+						},
+						{
+							"key": "site_build_datetime",
+							"value": "2019",
+							"type": "text"
+						},
+						{
+							"key": "site_value",
+							"value": "2.0230",
+							"type": "text"
+						},
+						{
+							"key": "site_mserver1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_mserver2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_mserver3",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_ip",
+							"value": "111.222.333.444:1235",
+							"description": "位址不可重複",
+							"type": "text"
+						},
+						{
+							"key": "site_ip2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_ip3",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "陽光街3223號",
+							"type": "text"
+						},
+						{
+							"key": "tel",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_lon",
+							"value": "121.5760",
+							"type": "text"
+						},
+						{
+							"key": "site_lat",
+							"value": "25.0732",
+							"type": "text"
+						},
+						{
+							"key": "site_type",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "site_alarm_level",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "area_id",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "area_id2",
+							"value": "63000100",
+							"type": "text"
+						},
+						{
+							"key": "site_device_type",
+							"value": "S",
+							"type": "text"
+						},
+						{
+							"key": "site_group_key",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_group2_key",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "set_rs232_mbox",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_mbox",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_sanlian",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_cwb2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_cwb",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_dio1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_dio2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_dio3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_site",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "site_status",
+							"value": "close",
+							"type": "text"
+						},
+						{
+							"key": "remark",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "a3c10e53-94d5-459b-8fb4-4b558cdd72f6",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETDATASITEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETDATASITEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16.變更站台資料[checkSiteID] SetDataSiteInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETDATASITEINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "checkSiteID",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "S00034",
+							"description": "站台ID",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "65b1d789-4c07-4d48-b635-35b14f7a3a34",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETDATASITEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETDATASITEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16.變更站台資料[Update] SetDataSiteInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETDATASITEINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "update",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "TT112",
+							"type": "text"
+						},
+						{
+							"key": "site_name",
+							"value": "測試110",
+							"type": "text"
+						},
+						{
+							"key": "site_build_datetime",
+							"value": "2019",
+							"type": "text"
+						},
+						{
+							"key": "site_value",
+							"value": "2.0230",
+							"type": "text"
+						},
+						{
+							"key": "site_mserver1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_mserver2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_mserver3",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_ip",
+							"value": "222.333.444.555:1234",
+							"type": "text"
+						},
+						{
+							"key": "site_ip2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_ip3",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "鄭州路139號",
+							"type": "text"
+						},
+						{
+							"key": "tel",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_lon",
+							"value": "121.5760",
+							"type": "text"
+						},
+						{
+							"key": "site_lat",
+							"value": "25.0732",
+							"type": "text"
+						},
+						{
+							"key": "site_status",
+							"value": "close",
+							"type": "text"
+						},
+						{
+							"key": "site_type",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "site_alarm_level",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "area_id",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "area_id2",
+							"value": "63000100",
+							"type": "text"
+						},
+						{
+							"key": "site_device_type",
+							"value": "S",
+							"type": "text"
+						},
+						{
+							"key": "site_group_key",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "site_group2_key",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "set_rs232_mbox",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_mbox",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_sanlian",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_cwb2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_cwb",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_dio1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_dio2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_dio3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "set_tcpip_site",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "remark",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "alter_site_status",
+							"value": "yes",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "2011e01d-31f9-4ef9-91b6-4317ed5b53fa",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETDATASITEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETDATASITEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16.變更站台資料[Delete] SetDataSiteInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETDATASITEINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "delete",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "TT115",
+							"type": "text"
+						},
+						{
+							"key": "site_name",
+							"value": "測試111",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "a3c10e53-94d5-459b-8fb4-4b558cdd72f6",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETDATASITEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETDATASITEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16.變更站台資料[UploadFile] SetDataSiteInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETDATASITEINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "upload_file",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "TT115",
+							"type": "text"
+						},
+						{
+							"key": "image_ext",
+							"value": "data:image/jpeg;base64,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",
+							"description": "圖片的 base64 字串",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "65b1d789-4c07-4d48-b635-35b14f7a3a34",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETDATASITEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETDATASITEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16.變更站台資料[show_pic] SetDataSiteInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETDATASITEINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "show_pic",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "TT115",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "a333aedc-ebfd-4545-b023-c13e5a0a66b6",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETDATASITEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETDATASITEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17.取得API帳號資料 GETAPIACCOUNTINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETAPIACCOUNTINFO",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "019241",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "a333aedc-ebfd-4545-b023-c13e5a0a66b6",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETAPIACCOUNTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETAPIACCOUNTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18.取得帳號資料 GETACCOUNTINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETACCOUNTINFO",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "a333aedc-ebfd-4545-b023-c13e5a0a66b6",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETACCOUNTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETACCOUNTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19.取得寄信內容 GETACCOUNTINFOPWD",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETACCOUNTINFOPWD",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "Email",
+							"value": "lambertchen@dps.tw",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "a333aedc-ebfd-4545-b023-c13e5a0a66b6",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETACCOUNTINFOPWD",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETACCOUNTINFOPWD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20.判斷token_iguid GETACCOUNTINFOTOKEN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETACCOUNTINFOPWD",
+							"type": "text"
+						},
+						{
+							"key": "account",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "token_iguid",
+							"value": "87a1fc96-e1ac-11e8-a26e-00155d0cc801",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETACCOUNTINFOTOKEN",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETACCOUNTINFOTOKEN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21.取得帳號搜尋資料 GETSEARCHACCOUNTRESULT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHACCOUNTRESULT",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "user_role",
+							"value": "admin",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "active",
+							"value": "active",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "coun_id",
+							"value": "65000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "4a853883-efc7-48c3-b1ab-62e7f6acef34",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHACCOUNTRESULT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHACCOUNTRESULT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22.變更帳號資料[update] SETACCOUNTINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETACCOUNTINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "update",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "user_name",
+							"value": "yu-hong",
+							"type": "text"
+						},
+						{
+							"key": "unit_name",
+							"value": "中保防災",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "0912345678",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "hh@dps.tw",
+							"type": "text"
+						},
+						{
+							"key": "coun_id",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "town_id",
+							"value": "63000100",
+							"type": "text"
+						},
+						{
+							"key": "unit_type",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "unit_type1",
+							"value": "322",
+							"type": "text"
+						},
+						{
+							"key": "group_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "大同街1230號",
+							"type": "text"
+						},
+						{
+							"key": "lat",
+							"value": "25.0255",
+							"type": "text"
+						},
+						{
+							"key": "lng",
+							"value": "121.5040",
+							"type": "text"
+						},
+						{
+							"key": "user_role",
+							"value": "normal",
+							"type": "text"
+						},
+						{
+							"key": "active_status",
+							"value": "active",
+							"type": "text"
+						},
+						{
+							"key": "pending",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "de4cad4a-5910-4e3a-91aa-6c76581ad7a4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETACCOUNTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETACCOUNTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22.變更帳號資料[Insert] SETACCOUNTINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETACCOUNTINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "insert",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "testing",
+							"type": "text"
+						},
+						{
+							"key": "user_name",
+							"value": "測試",
+							"type": "text"
+						},
+						{
+							"key": "unit_name",
+							"value": "公司",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "1234567",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "eeee@dps.tw",
+							"type": "text"
+						},
+						{
+							"key": "coun_id",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "town_id",
+							"value": "632",
+							"type": "text"
+						},
+						{
+							"key": "unit_type",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "unit_type1",
+							"value": "501",
+							"type": "text"
+						},
+						{
+							"key": "group_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "outerspace",
+							"type": "text"
+						},
+						{
+							"key": "lat",
+							"value": "25.22",
+							"type": "text"
+						},
+						{
+							"key": "lng",
+							"value": "121.33",
+							"type": "text"
+						},
+						{
+							"key": "user_role",
+							"value": "normal",
+							"type": "text"
+						},
+						{
+							"key": "active_status",
+							"value": "active",
+							"type": "text"
+						},
+						{
+							"key": "server_url",
+							"value": "127.0.0.1",
+							"type": "text"
+						},
+						{
+							"key": "pwd",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "de4cad4a-5910-4e3a-91aa-6c76581ad7a4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETACCOUNTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETACCOUNTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22.變更帳號資料[updateTokenIguid] SETACCOUNTINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETACCOUNTINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "updateTokenIguid",
+							"type": "text"
+						},
+						{
+							"key": "account",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "token_iguid",
+							"value": "87a1fc96-e1ac-11e8-a26e-00155d0cc801",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "de4cad4a-5910-4e3a-91aa-6c76581ad7a4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETACCOUNTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETACCOUNTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22.變更帳號資料[resetPWD] SETACCOUNTINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETACCOUNTINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "resetPWD",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "pwd",
+							"value": "hong123",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "a333aedc-ebfd-4545-b023-c13e5a0a66b6",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETACCOUNTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETACCOUNTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22.變更帳號資料[setSubscribeDS] SETACCOUNTINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETACCOUNTINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "setSubscribeDS",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "hong",
+							"type": "text"
+						},
+						{
+							"key": "subscript_count",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "subscriptDS",
+							"value": "[\"S00034\",\"S00022\",\"S00097\"]",
+							"type": "text"
+						},
+						{
+							"key": "subscriptDS_sort",
+							"value": "[1,2,3]",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "d99d53cb-8b19-495f-89c9-eb8c47732d27",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETACCOUNTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETACCOUNTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "23.變更API帳號資料[insert] SETAPIACCOUNTINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETAPIACCOUNTINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "insert",
+							"type": "text"
+						},
+						{
+							"key": "active_status",
+							"value": "close",
+							"type": "text"
+						},
+						{
+							"key": "comp_cd",
+							"value": "12341234",
+							"type": "text"
+						},
+						{
+							"key": "user_name",
+							"value": "Hello",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "company",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Moon",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "1234567",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "echoxjh@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "coun_id",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "town_id",
+							"value": "63000100",
+							"type": "text"
+						},
+						{
+							"key": "program_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "remark",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_host_address",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "update_time",
+							"value": "2019-11-12 17:00:00",
+							"type": "text"
+						},
+						{
+							"key": "update_user",
+							"value": "echo_admin",
+							"type": "text"
+						},
+						{
+							"key": "cont_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "server_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "pwd",
+							"value": "Hellow",
+							"type": "text"
+						},
+						{
+							"key": "contact_name",
+							"value": "World",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "Hellow",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "70c9215e-b35f-48e6-a0db-11d227d7700a",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETAPIACCOUNTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETAPIACCOUNTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "23.變更API帳號資料[update] SETAPIACCOUNTINFO Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETAPIACCOUNTINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "update",
+							"type": "text"
+						},
+						{
+							"key": "active_status",
+							"value": "close",
+							"type": "text"
+						},
+						{
+							"key": "comp_cd",
+							"value": "12341234",
+							"type": "text"
+						},
+						{
+							"key": "user_name",
+							"value": "Hello",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "company",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Moon",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "1234567",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "echoxjh@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "coun_id",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "town_id",
+							"value": "63000100",
+							"type": "text"
+						},
+						{
+							"key": "program_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "remark",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_host_address",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "update_time",
+							"value": "2019-11-12 17:00:00",
+							"type": "text"
+						},
+						{
+							"key": "update_user",
+							"value": "echo_admin",
+							"type": "text"
+						},
+						{
+							"key": "cont_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "server_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "pwd",
+							"value": "Hell",
+							"type": "text"
+						},
+						{
+							"key": "contact_name",
+							"value": "World",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "Hellow",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "70c9215e-b35f-48e6-a0db-11d227d7700a",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETAPIACCOUNTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETAPIACCOUNTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "24.取群組資料 GETGROUPINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETGROUPINFO",
+							"type": "text"
+						},
+						{
+							"key": "group_iguid",
+							"value": "f08e1021-0ff8-484d-be88-1b38ab9dc009",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "70c9215e-b35f-48e6-a0db-11d227d7700a",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETGROUPINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETGROUPINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "25.取群組權限資料 GETGROUPFUNC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETGROUPFUNC",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "Master_HeaderNav_ALL",
+							"type": "text"
+						},
+						{
+							"key": "group_iguid",
+							"value": "71dc6295-ac73-4832-9909-d5e69656ccfe",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "2fee110d-e680-40f4-ac1f-14c88f4804c4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETGROUPFUNC",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETGROUPFUNC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "26.變更群組資料[insert] SETGROUPINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETGROUPINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "insert",
+							"type": "text"
+						},
+						{
+							"key": "group_iguid",
+							"value": "hongdtest",
+							"type": "text"
+						},
+						{
+							"key": "group_name",
+							"value": "test123",
+							"type": "text"
+						},
+						{
+							"key": "memo",
+							"value": "測試專用",
+							"type": "text"
+						},
+						{
+							"key": "default_page",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "70c9215e-b35f-48e6-a0db-11d227d7700a",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETGROUPINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETGROUPINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "26.變更群組資料[update] SETGROUPINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETGROUPINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "update",
+							"type": "text"
+						},
+						{
+							"key": "group_iguid",
+							"value": "71dc6295-ac73-4832-9909-d5e69656ccfe",
+							"type": "text"
+						},
+						{
+							"key": "group_name",
+							"value": "測試專用a",
+							"type": "text"
+						},
+						{
+							"key": "memo",
+							"value": "測試專用a",
+							"type": "text"
+						},
+						{
+							"key": "default_page",
+							"value": "testa",
+							"type": "text"
+						},
+						{
+							"key": "authorize_count",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "authorize",
+							"value": "[\n        {\"st_sn\":\"IS\",\"sn\":\"ClientMap\",\"value_str\":\"{讀取}\"},\n        {\"st_sn\":\"IS\",\"sn\":\"MsgComMap\",\"value_str\":\"{讀取}\"},\n        {\"st_sn\":\"IS\",\"sn\":\"PublicUserMap\",\"value_str\":\"{讀取}\"}\n]",
+							"description": "authorize 傳入多筆資料",
+							"type": "text"
+						},
+						{
+							"key": "authorize",
+							"value": "[{\"st_sn\":\"IS\",\"sn\":\"ClientMap\",\"value_str\":\"{讀取}\"}]",
+							"description": "只傳入一筆資料",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "70c9215e-b35f-48e6-a0db-11d227d7700a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETGROUPINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETGROUPINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "26.變更群組資料[delete] SETGROUPINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETGROUPINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "delete",
+							"type": "text"
+						},
+						{
+							"key": "group_iguid",
+							"value": "hongdtest",
+							"type": "text"
+						},
+						{
+							"key": "group_name",
+							"value": "測試專用a",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "memo",
+							"value": "測試專用a",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "default_page",
+							"value": "testa",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "authorize_count",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "authorize",
+							"value": "[\n        {\"st_sn\":\"IS\",\"sn\":\"ClientMap\",\"value_str\":\"{讀取}\"},\n        {\"st_sn\":\"IS\",\"sn\":\"MsgComMap\",\"value_str\":\"{讀取}\"},\n        {\"st_sn\":\"IS\",\"sn\":\"PublicUserMap\",\"value_str\":\"{讀取}\"}\n]",
+							"description": "authorize 傳入多筆資料",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "authorize",
+							"value": "[{\"st_sn\":\"IS\",\"sn\":\"ClientMap\",\"value_str\":\"{讀取}\"}]",
+							"description": "只傳入一筆資料",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "removed_group_name",
+							"value": "test123",
+							"type": "text"
+						},
+						{
+							"key": "removed_status",
+							"value": "{啟用}",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "70c9215e-b35f-48e6-a0db-11d227d7700a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETGROUPINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETGROUPINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "27.取歷史地震紀錄 GETHISTORYEVENTINFO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETHISTORYEVENTINFO",
+							"type": "text"
+						},
+						{
+							"key": "call_type",
+							"value": "EEW",
+							"type": "text"
+						},
+						{
+							"key": "identifier",
+							"value": "CWB-EEW107421901",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "magnitude_from",
+							"value": "-1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "magnitude_to",
+							"value": "5",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "time_from",
+							"value": "2018/12/24 12:00:00",
+							"type": "text"
+						},
+						{
+							"key": "time_to",
+							"value": "2019/11/28 12:00:00",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "de4cad4a-5910-4e3a-91aa-6c76581ad7a4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETHISTORYEVENTINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETHISTORYEVENTINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "28.GetCountyData 取得各縣市",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETCOUNTYDATA",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "a333aedc-ebfd-4545-b023-c13e5a0a66b6",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETCOUNTYDATA",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETCOUNTYDATA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "29.GetTownData 取得各鄉鎮市區",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETTOWNDATA",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "2fee110d-e680-40f4-ac1f-14c88f4804c4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETTOWNDATA",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETTOWNDATA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "30.GetLocalList 取得縣市AND鄉鎮LIST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETLOCALLIST",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "a333aedc-ebfd-4545-b023-c13e5a0a66b6",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETLOCALLIST",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETLOCALLIST"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "31.GetSimuList 取得模擬測試LIST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSIMULIST",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "d99d53cb-8b19-495f-89c9-eb8c47732d27",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSIMULIST",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSIMULIST"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "32.GetSiteAndClient 取得主站和Client List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSITEANDCLIENT",
+							"type": "text"
+						},
+						{
+							"key": "site_type",
+							"value": "client",
+							"description": "main, client",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "area_id",
+							"value": "63000",
+							"description": "縣市id",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "area_id2",
+							"value": "63000100",
+							"description": "鄉鎮id",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "2fee110d-e680-40f4-ac1f-14c88f4804c4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSITEANDCLIENT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSITEANDCLIENT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "33.GetAlermStatistics 取得各地發報統計數據(1分鐘內)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETALERMSTATISTICS",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "2fee110d-e680-40f4-ac1f-14c88f4804c4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETALERMSTATISTICS",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETALERMSTATISTICS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "34.GetSiteIpData 取得主站IP (各個主站至多3個)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSITEIPDATA",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "a333aedc-ebfd-4545-b023-c13e5a0a66b6",
+							"description": "登入token",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSITEIPDATA",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSITEIPDATA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "35.SetSimulateInfo_Uni 變更模擬資料[新增]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETSIMULATEINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "insert",
+							"type": "text"
+						},
+						{
+							"key": "sim_sendTime",
+							"value": "2019-11-19 14:18:12",
+							"type": "text"
+						},
+						{
+							"key": "sim_dueSecond",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "sim_type",
+							"value": "TEST",
+							"type": "text"
+						},
+						{
+							"key": "sim_sendType",
+							"value": "API客戶",
+							"type": "text"
+						},
+						{
+							"key": "sim_sendTo",
+							"value": "ncree-kc",
+							"type": "text"
+						},
+						{
+							"key": "sim_msgContent",
+							"value": "[{'65000080':'6'},{'10014040':'8'},{'10013230':'7'},{'10013040':'6'},{'10010120':'5'},{'10009110':'4'},{'10008100':'3'},{'10007090':'2'},{'10005110':'2'}]",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "2fee110d-e680-40f4-ac1f-14c88f4804c4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETSIMULATEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETSIMULATEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "35.SetSimulateInfo_Uni 變更模擬資料[編輯]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETSIMULATEINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "update",
+							"type": "text"
+						},
+						{
+							"key": "sim_sendTime",
+							"value": "2019-11-19 19:18:12",
+							"type": "text"
+						},
+						{
+							"key": "sim_dueSecond",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "sim_type",
+							"value": "EXERCISE",
+							"type": "text"
+						},
+						{
+							"key": "sim_sendType",
+							"value": "API客戶",
+							"type": "text"
+						},
+						{
+							"key": "sim_sendTo",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "sim_msgContent",
+							"value": "[{'65000080':'6'}]",
+							"type": "text"
+						},
+						{
+							"key": "sim_iguid",
+							"value": "9974b285-0ae6-11ea-84d6-002215d7b378",
+							"description": "PK",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "2fee110d-e680-40f4-ac1f-14c88f4804c4",
+							"description": "登入token",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETSIMULATEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETSIMULATEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "35.SetSimulateInfo_Uni 變更模擬資料[刪除]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETSIMULATEINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "delete",
+							"type": "text"
+						},
+						{
+							"key": "sim_iguid",
+							"value": "9974b285-0ae6-11ea-84d6-002215d7b378",
+							"description": "PK",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "b3984b9c-8797-48a8-bdf4-3feb45343454",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETSIMULATEINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETSIMULATEINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "36.GetSearchSiteGroupResult 取得區域搜尋資料",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHSITEGROUPRESULT",
+							"type": "text"
+						},
+						{
+							"key": "area_id",
+							"value": "65000",
+							"description": "縣市ID",
+							"type": "text"
+						},
+						{
+							"key": "area_id2",
+							"value": "10002010",
+							"description": "鄉鎮ID",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "page_no",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "row_count",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "b3984b9c-8797-48a8-bdf4-3feb45343454",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHSITEGROUPRESULT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHSITEGROUPRESULT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "37.SetSiteGroupInfo_Uni 變更區域資料 (sys_town)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "SETSITEGROUPINFO",
+							"type": "text"
+						},
+						{
+							"key": "action_type",
+							"value": "update",
+							"type": "text"
+						},
+						{
+							"key": "town_name",
+							"value": "宜蘭市",
+							"type": "text"
+						},
+						{
+							"key": "town_lon",
+							"value": "121.749",
+							"type": "text"
+						},
+						{
+							"key": "town_lat",
+							"value": "24.75",
+							"type": "text"
+						},
+						{
+							"key": "town_value",
+							"value": "1.609",
+							"type": "text"
+						},
+						{
+							"key": "priority_site_1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "priority_site_2",
+							"value": "S00005,S00115,S00111",
+							"type": "text"
+						},
+						{
+							"key": "priority_site_3",
+							"value": "S00118,S00024,S00112,S00114",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "019241",
+							"type": "text"
+						},
+						{
+							"key": "county_id",
+							"value": "10002",
+							"type": "text"
+						},
+						{
+							"key": "town_id",
+							"value": "10002010",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "631c534b-4cac-4b90-b9e9-1558c6a8387c",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=SETSITEGROUPINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "SETSITEGROUPINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "38.GetSearchDSEventLogResults 取事件完整記錄",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHDSEVENTLOGRESULT",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "ncree",
+							"type": "text"
+						},
+						{
+							"key": "time_from",
+							"value": "2019-8-08 00:00:00",
+							"type": "text"
+						},
+						{
+							"key": "time_to",
+							"value": "2019-10-03 23:59:59",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "S00049",
+							"type": "text"
+						},
+						{
+							"key": "site_name",
+							"value": "瑞竹",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "area_id",
+							"value": "10008",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "area_id2",
+							"value": "10008040",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "predict_level",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "actual_level",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "631c534b-4cac-4b90-b9e9-1558c6a8387c",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHDSEVENTLOGRESULT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHDSEVENTLOGRESULT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "39.GetSearchDSAlarmLogResults 取站台發報紀錄",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHDSALARMLOGRESULT",
+							"type": "text"
+						},
+						{
+							"key": "counID",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "area_id",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "area_id2",
+							"value": "63000030",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "actual_level",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "time_from",
+							"value": "2018/12/21 12:00:00",
+							"type": "text"
+						},
+						{
+							"key": "time_to",
+							"value": "2019/12/21 :20:00:00",
+							"type": "text"
+						},
+						{
+							"key": "userRole",
+							"value": "normal",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "1qq",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "1qq",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "site_name",
+							"value": "q",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "b3984b9c-8797-48a8-bdf4-3feb45343454",
+							"description": "登入token",
+							"type": "text"
+						},
+						{
+							"key": "page_no",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "row_count",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHDSALARMLOGRESULT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHDSALARMLOGRESULT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "40.GetSearchDSStatusLogResults 取站台通聯紀錄[main]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHDSSTATUSLOGRESULT",
+							"type": "text"
+						},
+						{
+							"key": "site_type",
+							"value": "main",
+							"description": "main, client",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "ncree",
+							"type": "text"
+						},
+						{
+							"key": "area_id",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "area_id2",
+							"value": "63000030",
+							"type": "text"
+						},
+						{
+							"key": "time_from",
+							"value": "2019/09/19 10:00:00",
+							"type": "text"
+						},
+						{
+							"key": "time_to",
+							"value": "2019/11/19 12:00:00",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "offline",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "S00024",
+							"type": "text"
+						},
+						{
+							"key": "site_name",
+							"value": "公館",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "b3984b9c-8797-48a8-bdf4-3feb45343454",
+							"description": "登入token",
+							"type": "text"
+						},
+						{
+							"key": "page_no",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "row_count",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHDSSTATUSLOGRESULT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHDSSTATUSLOGRESULT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "40.GetSearchDSStatusLogResults 取站台通聯紀錄[client]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHDSSTATUSLOGRESULT",
+							"type": "text"
+						},
+						{
+							"key": "site_type",
+							"value": "client",
+							"type": "text"
+						},
+						{
+							"key": "counID",
+							"value": "10014",
+							"type": "text"
+						},
+						{
+							"key": "area_id",
+							"value": "10014",
+							"type": "text"
+						},
+						{
+							"key": "area_id2",
+							"value": "10014050",
+							"type": "text"
+						},
+						{
+							"key": "site_id",
+							"value": "050059",
+							"type": "text"
+						},
+						{
+							"key": "site_name",
+							"value": "韓宗",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "offline",
+							"type": "text"
+						},
+						{
+							"key": "time_from",
+							"value": "2019/09/25 12:00:00",
+							"type": "text"
+						},
+						{
+							"key": "time_to",
+							"value": "2019/10/01 12:00:00",
+							"type": "text"
+						},
+						{
+							"key": "userRole",
+							"value": "normal",
+							"type": "text"
+						},
+						{
+							"key": "userID",
+							"value": "050059",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "b3984b9c-8797-48a8-bdf4-3feb45343454",
+							"description": "登入token",
+							"type": "text"
+						},
+						{
+							"key": "page_no",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "row_count",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHDSSTATUSLOGRESULT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHDSSTATUSLOGRESULT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "41.GetSearchAPIStatusLogResults 取API狀態紀錄",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHAPISTATUSLOGRESULT",
+							"type": "text"
+						},
+						{
+							"key": "account",
+							"value": "019020",
+							"type": "text"
+						},
+						{
+							"key": "time_from",
+							"value": "2019-09-01",
+							"type": "text"
+						},
+						{
+							"key": "time_to",
+							"value": "2019-10-01",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "631c534b-4cac-4b90-b9e9-1558c6a8387c",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHAPISTATUSLOGRESULT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHAPISTATUSLOGRESULT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "42.GetSimulationLogInfoData 取模擬演練測試發報紀錄",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSIMULATIONLOGINFODATA",
+							"type": "text"
+						},
+						{
+							"key": "log_state",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sim_type",
+							"value": "EXERCISE",
+							"type": "text"
+						},
+						{
+							"key": "api_account",
+							"value": "42867074",
+							"type": "text"
+						},
+						{
+							"key": "time_from",
+							"value": "2019/09/18 16:50:00",
+							"type": "text"
+						},
+						{
+							"key": "time_to",
+							"value": "2019/09/18 16:58:00",
+							"type": "text"
+						},
+						{
+							"key": "identifier",
+							"value": "3699566d-d9f2-11e9-843a-00e009a6d480",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "b3984b9c-8797-48a8-bdf4-3feb45343454",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSIMULATIONLOGINFODATA",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSIMULATIONLOGINFODATA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "43.GetSiteIpData 取API發送訊號紀錄",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETAPISENDLOGINFO",
+							"type": "text"
+						},
+						{
+							"key": "call_type",
+							"value": "REAL",
+							"type": "text"
+						},
+						{
+							"key": "time_from",
+							"value": "2019/10/01 10:15:00",
+							"type": "text"
+						},
+						{
+							"key": "time_to",
+							"value": "2019/10/01 10:20:00",
+							"type": "text"
+						},
+						{
+							"key": "api_account",
+							"value": "54232885",
+							"type": "text"
+						},
+						{
+							"key": "sim_type",
+							"value": "REAL",
+							"type": "text"
+						},
+						{
+							"key": "identifier",
+							"value": "355239",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "631c534b-4cac-4b90-b9e9-1558c6a8387c",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETAPISENDLOGINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETAPISENDLOGINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "44.GetKey 取得登入金鑰",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETKEY",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{Domain}}/POSWEB/?action=GETKEY",
+					"protocol": "http",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETKEY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "45.LOGOUT 登出",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "LOGOUT",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "b3984b9c-8797-48a8-bdf4-3feb45343454",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=LOGOUT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "LOGOUT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "46.ChkAuthorization 權限驗證",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "ChkAuthorization",
+							"type": "text"
+						},
+						{
+							"key": "group_iguid",
+							"value": "71dc6295-ac73-4832-9909-d5e69656ccfe",
+							"type": "text"
+						},
+						{
+							"key": "function_id",
+							"value": "AccountManage",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "537bb01f-7edf-461e-8474-f41cd4270af4",
+							"description": "登入token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETGROUPINFO",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETGROUPINFO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "47.GetSearchAPIAccountResults 取得API帳號搜尋資料",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHAPIACCOUNTRESULTS",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "test123",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "pending",
+							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "comp",
+							"value": "中保",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "537bb01f-7edf-461e-8474-f41cd4270af4",
+							"description": "登入token",
+							"type": "text"
+						},
+						{
+							"key": "page_no",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "row_count",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHAPIACCOUNTRESULTS",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHAPIACCOUNTRESULTS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "48.取得區域搜尋資料",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSEARCHSITEGROUPRESULT",
+							"type": "text"
+						},
+						{
+							"key": "area_id",
+							"value": "63000",
+							"type": "text"
+						},
+						{
+							"key": "area_id2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "537bb01f-7edf-461e-8474-f41cd4270af4",
+							"description": "登入token",
+							"type": "text"
+						},
+						{
+							"key": "page_no",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "row_count",
+							"value": "20",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSEARCHSITEGROUPRESULT",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSEARCHSITEGROUPRESULT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "90.檢查Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "CheckToken",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "2fee110d-e680-40f4-ac1f-14c88f4804c4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{Domain}}/POSWEB/?action=CHECKTOKEN",
+					"protocol": "http",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "CHECKTOKEN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "99.產生Hash密碼(測試用)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "param",
+							"value": "test123",
+							"description": "密碼",
+							"type": "text"
+						},
+						{
+							"key": "param2",
+							"value": "vabi6893",
+							"description": "金鑰",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{Domain}}/POSWEB/?action=PHASH",
+					"protocol": "http",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "PHASH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "50.GETSTATUSLIST 取得站台資訊",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "GETSTATUSLIST",
+							"type": "text"
+						},
+						{
+							"key": "site_type",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "site_status",
+							"value": "active",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "537bb01f-7edf-461e-8474-f41cd4270af4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=GETSTATUSLIST",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "GETSTATUSLIST"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "51.APICLIENTSTATUSLIST 取得APIclient資訊",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CMD",
+							"value": "APICLIENTSTATUSLIST",
+							"type": "text"
+						},
+						{
+							"key": "active_status",
+							"value": "active",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "631c534b-4cac-4b90-b9e9-1558c6a8387c",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://221.120.40.74:8080/POSWEB/?action=APICLIENTSTATUSLIST",
+					"protocol": "http",
+					"host": [
+						"221",
+						"120",
+						"40",
+						"74"
+					],
+					"port": "8080",
+					"path": [
+						"POSWEB",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "APICLIENTSTATUSLIST"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
